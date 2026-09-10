@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://designer-sa-planejados.vercel.app/sitemap.xml
