@@ -8,6 +8,13 @@
 - [x] Encaminhamento estruturado para WhatsApp
 - [x] Estrutura inicial de SEO e conteúdo
 
+## V1.1 — Refinamento visual premium
+- [x] Nova hierarquia visual
+- [x] Hero com maior impacto
+- [x] Direção de arte inspirada em marcenaria e interiores
+- [x] Microinterações e acabamento premium
+- [x] Experiência responsiva preservada
+
 ## V2 — Captação e CRM
 - [ ] Supabase
 - [ ] Tabela de leads
