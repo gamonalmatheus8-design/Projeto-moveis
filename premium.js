@@ -1,23 +1,22 @@
 (() => {
-  // V5.2 — identidade cromática Designer Sá.
-  // Carregado por último para sobrescrever a base visual sem alterar a estrutura das páginas.
-  if (!document.querySelector('link[data-sa-theme="v5.2"]')) {
+  // V6 — Marcenaria Contemporânea.
+  // Tema quente inspirado em madeira, pedra e interiores, carregado por último.
+  if (!document.querySelector('link[data-sa-theme="v6.0"]')) {
     document.querySelectorAll('link[data-sa-theme]').forEach((node) => node.remove());
     const theme = document.createElement('link');
     theme.rel = 'stylesheet';
-    theme.href = '/theme.css?v=5.2';
-    theme.dataset.saTheme = 'v5.2';
+    theme.href = '/theme.css?v=6.0';
+    theme.dataset.saTheme = 'v6.0';
     document.head.appendChild(theme);
   }
   const themeMeta = document.querySelector('meta[name="theme-color"]');
-  if (themeMeta) themeMeta.setAttribute('content', '#DDE1DA');
+  if (themeMeta) themeMeta.setAttribute('content', '#E7DFD4');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer:fine)').matches;
   const hero = document.querySelector('.hero-art');
   const frame = document.getElementById('premiumRoomFrame');
 
-  // Reading progress
   const progress = document.createElement('div');
   progress.className = 'v4-reading-progress';
   progress.setAttribute('aria-hidden', 'true');
@@ -33,7 +32,6 @@
   window.addEventListener('scroll', updateProgress, { passive: true });
   window.addEventListener('resize', updateProgress);
 
-  // Architectural hero depth + moving light
   if (hero && frame && finePointer && !reduceMotion) {
     hero.addEventListener('pointermove', (event) => {
       const rect = hero.getBoundingClientRect();
@@ -50,7 +48,6 @@
     });
   }
 
-  // Magnetic motion only on desktop/fine pointer; tiny enough not to hurt usability
   const magnets = document.querySelectorAll('.button-primary, .header-cta, .offer-button, .button-light');
   magnets.forEach((element) => {
     element.setAttribute('data-v4-magnetic', '');
@@ -66,7 +63,6 @@
     });
   });
 
-  // FAQ remains exclusive for a cleaner flow
   const faqItems = [...document.querySelectorAll('.faq-list details')];
   faqItems.forEach((item) => item.addEventListener('toggle', () => {
     if (!item.open) return;
@@ -75,6 +71,5 @@
     });
   }));
 
-  // Add a subtle page-ready state after first paint
   requestAnimationFrame(() => document.body.classList.add('v4-ready'));
 })();
