@@ -1,15 +1,16 @@
 (() => {
-  // V5.1 — identidade cromática Designer Sá.
+  // V5.2 — identidade cromática Designer Sá.
   // Carregado por último para sobrescrever a base visual sem alterar a estrutura das páginas.
-  if (!document.querySelector('link[data-sa-theme="v5.1"]')) {
+  if (!document.querySelector('link[data-sa-theme="v5.2"]')) {
+    document.querySelectorAll('link[data-sa-theme]').forEach((node) => node.remove());
     const theme = document.createElement('link');
     theme.rel = 'stylesheet';
-    theme.href = '/theme.css?v=5.1';
-    theme.dataset.saTheme = 'v5.1';
+    theme.href = '/theme.css?v=5.2';
+    theme.dataset.saTheme = 'v5.2';
     document.head.appendChild(theme);
   }
   const themeMeta = document.querySelector('meta[name="theme-color"]');
-  if (themeMeta) themeMeta.setAttribute('content', '#E1E3DE');
+  if (themeMeta) themeMeta.setAttribute('content', '#DDE1DA');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer:fine)').matches;
